@@ -36,5 +36,27 @@ for (const btn of allBtn){
 
       totalPrice = totalPrice + 550;
       document.getElementById("total-price").innerText = totalPrice;
+      grandTotal(totalPrice);
     })
+}
+
+function grandTotal(event){
+document.getElementById("coupon-button").addEventListener('click', function(){
+  const couponCode = document.getElementById("coupon-code").value;
+  if(couponCode === 'NEW 15'){
+    event =event -event*0.15;    
+   document.getElementById("grand-total").innerText = event;
+   document.getElementById("coupon-section").classList.add("hidden");
+  }
+  else if (couponCode === "Couple 20") {
+    event = event - event * 0.2;
+    document.getElementById("grand-total").innerText = event;
+    document.getElementById("coupon-section").classList.add("hidden");
+  } else {
+    alert("Invalid Coupon Code");
+  }
+})
+
+document.getElementById("grand-total").innerText =event ;
+
 }
