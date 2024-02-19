@@ -16,3 +16,10 @@
 .max-width{
     max-width: 1173px;
 }
+
+.new-class{
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    padding: 1rem;
+}
