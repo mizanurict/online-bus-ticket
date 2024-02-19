@@ -19,6 +19,7 @@ for (const btn of allBtn) {
     }
     e.target.style.backgroundColor = "orange";
     e.target.style.color = "White";
+    e.target.disabled=true;
 
     const totalSeat = parseInt(document.getElementById("total-seat").innerText);
     const newTotalSeat = totalSeat - 1;
@@ -45,6 +46,7 @@ for (const btn of allBtn) {
     totalPrice = totalPrice + 550;
     document.getElementById("total-price").innerText = totalPrice;
     if(totalPrice===2200){
+      document.getElementById("coupon-button").disabled=false;
       grandTotal(totalPrice);
     }else{
       document.getElementById("grand-total").innerText = totalPrice;
