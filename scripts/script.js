@@ -9,9 +9,7 @@ let totalPrice = 0;
 
 const allBtn = document.getElementsByClassName("seat-btn");
 for (const btn of allBtn) {
-  
   btn.addEventListener("click", function (e) {
-
     const bookingSeatNumber = document.getElementById("booking-seat").innerText;
     if (bookingSeatNumber === "4") {
       alert("Please don't select seat");
@@ -19,7 +17,8 @@ for (const btn of allBtn) {
     }
     e.target.style.backgroundColor = "orange";
     e.target.style.color = "White";
-    e.target.disabled=true;
+    e.target.disabled=true;  
+    document.getElementById("next-bt").removeAttribute("disabled"); 
 
     const totalSeat = parseInt(document.getElementById("total-seat").innerText);
     const newTotalSeat = totalSeat - 1;
@@ -46,7 +45,7 @@ for (const btn of allBtn) {
     totalPrice = totalPrice + 550;
     document.getElementById("total-price").innerText = totalPrice;
     if(totalPrice===2200){
-      document.getElementById("coupon-button").disabled=false;
+      document.getElementById("coupon-button").disabled=false;      
       grandTotal(totalPrice);
     }else{
       document.getElementById("grand-total").innerText = totalPrice;
